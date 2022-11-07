@@ -8,18 +8,23 @@ namespace TemperatureConverter
 {
     public class Celcius
     {
-        Logger logger = new Logger();
+        ILogger logger;
 
-        public double CelciusToFahrenheit(double celcius)
+        public Celcius(ILogger logger)
         {
-            double result = (celcius * 1.8) + 32;
+            this.logger = logger;
+        }
+
+        public float CelciusToFahrenheit(float celcius)
+        {
+            float result = (celcius * 1.8f) + 32;
             logger.Log($"{celcius} in Celcius are {result} in Fahrenheit");
             return result;
         }
 
-        public double FahrenheitToCelcius(double fahrenheit)
+        public float FahrenheitToCelcius(float fahrenheit)
         {
-            double result = (fahrenheit - 32) / 1.8;
+            float result = (fahrenheit - 32) / 1.8f;
             logger.Log($"{fahrenheit} in Fahrenheit are {result} in Celcius");
             return result;
         }

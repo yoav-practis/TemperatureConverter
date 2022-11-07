@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TemperatureConverter
 {
-    public class Logger
+    public class LoggerImpl : ILogger
     {
         public bool Log(string message)
         {
